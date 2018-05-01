@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.5">
+<file name="/home/atash/atom/game/src/main/java/ru/atom/gamecontroller/GameController.java">
+</file>
+<file name="/home/atash/atom/game/src/main/java/ru/atom/matchmaker/MatchMakerApp.java">
+</file>
+<file name="/home/atash/atom/game/src/main/java/ru/atom/matchmaker/MatchMakerController.java">
+</file>
+<file name="/home/atash/atom/game/src/main/java/ru/atom/other/Leaderboard.java">
+</file>
+<file name="/home/atash/atom/game/src/main/java/ru/atom/other/Player.java">
+</file>
+<file name="/home/atash/atom/game/src/main/java/ru/atom/other/PlayerQueue.java">
+</file>
+<file name="/home/atash/atom/game/src/main/java/ru/atom/other/Selector.java">
+</file>
+</checkstyle>
