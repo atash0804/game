@@ -1,0 +1,37 @@
+package ru.atom.models;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import ru.atom.models.DataTypes.DataDirection;
+
+import java.util.Objects;
+
+import static ru.atom.utils.JsonHelper.fromJson;
+
+public class Message {
+    private String topic;
+    private String data;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Message message = (Message) o;
+        return Objects.equals(topic, message.topic) &&
+                Objects.equals(data, message.data);
+    }
+
+    @JsonCreator
+    public Message(@JsonProperty("topic") String topic, @JsonProperty("data") String data) {
+        this.topic = topic;
+        this.data = data;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public String getData() {
+        return data;
+    }
+}

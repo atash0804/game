@@ -1,12 +1,16 @@
 package ru.atom.models;
 
+import ru.atom.repositories.InputQueue;
+import ru.atom.tickables.Tickable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Session {
+public class Session implements Tickable {
     private int id;
     private int playerCount;
     private List<Player> players = new ArrayList<>();
+    private InputQueue messages = new InputQueue();
 
     public boolean isFinished() {
         return isFinished;
@@ -57,4 +61,7 @@ public class Session {
             rating += player.getRating();
         return rating / players.size();
     }
+
+    @Override
+    public void tick(long elapsed) {};
 }
