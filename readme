@@ -1,0 +1,4 @@
+if (message) {
+	res = session.push(message, author);
+	//send res via socket
+}
