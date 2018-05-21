@@ -10,19 +10,21 @@ import static ru.atom.utils.JsonHelper.fromJson;
 
 public class Message {
     private String topic;
-    private String data;
+    private Object data;
+    private int playerId;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Message message = (Message) o;
-        return Objects.equals(topic, message.topic) &&
+        return playerId == message.playerId &&
+                Objects.equals(topic, message.topic) &&
                 Objects.equals(data, message.data);
     }
 
     @JsonCreator
-    public Message(@JsonProperty("topic") String topic, @JsonProperty("data") String data) {
+    public Message(@JsonProperty("topic") String topic, @JsonProperty("data") Object data) {
         this.topic = topic;
         this.data = data;
     }
@@ -31,7 +33,7 @@ public class Message {
         return topic;
     }
 
-    public String getData() {
+    public Object getData() {
         return data;
     }
 }

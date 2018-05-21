@@ -24,6 +24,10 @@ public abstract class GameObject {
         return position;
     }
 
+    public void setPosition(Point position) {
+        this.position = position;
+    }
+
     public GameObject(int id, int height, int width, Point position) {
         this.id = id;
         this.height = height;

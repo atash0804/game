@@ -5,5 +5,6 @@ public enum PawnState {
     UP,
     LEFT,
     RIGHT,
-    IDLE
+    IDLE,
+    DEAD
 }

@@ -2,7 +2,7 @@ package ru.atom.repositories;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
-import ru.atom.models.Session;
+import ru.atom.models.GameSession;
 
 import java.util.NoSuchElementException;
 import java.util.Queue;
@@ -12,27 +12,27 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 @Repository
 public class SessionRepository {
-    private BlockingQueue<Session> sessions = new LinkedBlockingQueue<>();
+    private BlockingQueue<GameSession> sessions = new LinkedBlockingQueue<>();
 
-    public void add(Session session)
+    public void add(GameSession session)
     {
         sessions.add(session);
     }
 
-    public void remove(Session session)
+    public void remove(GameSession session)
     {
         sessions.remove(session);
     }
 
-    public Session get(long id)
+    public GameSession get(long id)
     {
-        for (Session session : sessions)
-            if (session.getId() == id)
-                return session;
+//        for (GameSession session : sessions)
+//            if (session.getId() == id)
+//                return session;
         return null;
     }
 
-    public BlockingQueue<Session> getSessions() {
+    public BlockingQueue<GameSession> getSessions() {
         return sessions;
     }
 }

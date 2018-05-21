@@ -3,22 +3,22 @@ package ru.atom.repositories;
 import org.springframework.stereotype.Repository;
 
 import java.util.concurrent.ConcurrentHashMap;
-import ru.atom.models.Session;
+import ru.atom.models.GameSession;
 
 @Repository
 public class GamesRepository
 {
-    private ConcurrentHashMap<Integer, Session> games = new ConcurrentHashMap<Integer, Session>();
+    private ConcurrentHashMap<Integer, GameSession> games = new ConcurrentHashMap<Integer, GameSession>();
 
-    public ConcurrentHashMap<Integer, Session> getGames() {
+    public ConcurrentHashMap<Integer, GameSession> getGames() {
         return games;
     }
 
     public void add(int id) {
-        games.put(id, new Session(id, 0));
+        games.put(id, new GameSession(id, 0));
     }
 
-    public Session get(Integer id)
+    public GameSession get(Integer id)
     {
         if (games.containsKey(id)) {
             return games.get(id);

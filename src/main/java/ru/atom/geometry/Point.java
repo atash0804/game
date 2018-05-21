@@ -1,18 +1,34 @@
 package ru.atom.geometry;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import static ru.atom.utils.JsonHelper.toJson;
+
 /**
  * Template class for
  */
 public class Point implements Collider {
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 
     /**
@@ -43,8 +59,13 @@ public class Point implements Collider {
         }
     }
 
-    public Point(int xx, int yy) {
+    public Point(double xx, double yy) {
         this.x = xx;
         this.y = yy;
+    }
+
+    @Override
+    public String toString() {
+        return toJson(this);
     }
 }

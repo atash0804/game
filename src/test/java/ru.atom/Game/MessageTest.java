@@ -5,7 +5,7 @@ import org.junit.Test;
 import ru.atom.models.DataTypes.DataDirection;
 import ru.atom.models.Message;
 import ru.atom.models.Player;
-import ru.atom.models.Session;
+import ru.atom.models.GameSession;
 import ru.atom.utils.JsonHelper;
 
 import java.util.ArrayList;
